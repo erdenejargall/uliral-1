@@ -7,6 +7,7 @@ const buttonData = [
   { name: "cv", file: "/cv" },
   { name: "search task", file: "/task2" },
   { name: "profile", file: "/profile" },
+  { name: "assignment", file: "/assignment"}
 ]; 
 
 export default function Home() {
