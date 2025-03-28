@@ -15,8 +15,8 @@ export default function Home() {
   const [grid, setGrid] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <h1 className="text-center font-extrabold text-3xl text-black mt-20">
+    <div className="min-h-screen">
+      <h1 className="text-center font-extrabold text-3xl text-indigo-600 mt-20">
         Home Page
       </h1>
       
@@ -42,7 +42,7 @@ export default function Home() {
           >
             <button 
               onClick={() => router.push(item.file)}
-              className="w-96 h-48 bg-gray-600 text-white rounded-lg border-2 border-transparent hover:bg-gray-400 transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="w-96 h-48 bg-gray-600 text-white rounded-lg border-2 border-transparent hover:bg-gray-400 transition-all duration-300 ease-in-out transform hover:scale-100"
             >
               {item.name}
             </button>
