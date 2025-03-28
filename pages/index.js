@@ -1,41 +1,48 @@
 import { useRouter } from "next/router";
-import { useState } from "react"; 
+import { useState } from "react";
 
 const buttonData = [
-  { name: "listing", file: "/task" },
-  { name: "color", file: "/color" },
-  { name: "cv", file: "/cv" },
-  { name: "search task", file: "/task2" },
-  { name: "profile", file: "/profile" },
-  { name: "assignment", file: "/assignment"}
-]; 
+  { name: "Listing", file: "/task" },
+  { name: "Color", file: "/color" },
+  { name: "CV", file: "/cv" },
+  { name: "Search Task", file: "/task2" },
+  { name: "Profile", file: "/profile" },
+  { name: "Assignment", file: "/assignment" },
+];
 
 export default function Home() {
   const router = useRouter();
   const [grid, setGrid] = useState(false);
 
   return (
-    <div>
-      <h1 className="flex justify-center align-start pt-24 font-bold text-2xl">
-        HomePage
+    <div className="min-h-screen bg-gray-100">
+      <h1 className="text-center font-extrabold text-3xl text-indigo-600 mt-20">
+        Home Page
       </h1>
-      <div className="flex items-center justify-between m-6">
+      
+      <div className="flex justify-center mt-8 mb-6">
         <button 
           onClick={() => setGrid(!grid)} 
-          className="p-6 bg-blue-300 text-white rounded hover:bg-red-500 transition"
+          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out"
         >
-          go to {grid ? "List" : "Grid"}
+          Switch to {grid ? "List" : "Grid"}
         </button>
       </div>
-      <div className={grid ? "flex grid grid-cols-1 sm:grid-cols-2 gap-5" : "space-y-4"}>
+
+      <div 
+        className={grid 
+          ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-4"
+          : "space-y-6 mx-4"
+        }
+      >
         {buttonData.map((item) => (
           <div 
-            key={item.name}
-            className="p-4"
+            key={item.name} 
+            className="flex justify-center"
           >
             <button 
               onClick={() => router.push(item.file)}
-              className="w-36 border-2 h-16 border-bg-red-300 rounded-lg p-4 bg-gray-500 hover:bg-gray-300"
+              className="w-48 h-16 bg-gray-600 text-white rounded-lg border-2 border-transparent hover:bg-gray-400 transition-all duration-300 ease-in-out transform hover:scale-105"
             >
               {item.name}
             </button>
@@ -44,4 +51,4 @@ export default function Home() {
       </div>
     </div>
   );
-} 
+}
