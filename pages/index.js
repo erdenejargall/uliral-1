@@ -8,7 +8,8 @@ const buttonData = [
   { name: "Search Task", file: "/task2" },
   { name: "Profile", file: "/profile" },
   { name: "Assignment", file: "/assignment" },
-  { name: "Nest counter", file: "/counter" }
+  { name: "Nest counter", file: "/counter" },
+  { name: "Weather app", file: "/weather" }
 ];
 
 export default function Home() {
