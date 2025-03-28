@@ -12,7 +12,7 @@ const buttonData = [
 
 export default function Home() {
   const router = useRouter();
-  const [grid, setGrid] = useState(false);
+  const [grid, setGrid] = useState(true);
 
   return (
     <div className="min-h-screen">
@@ -31,7 +31,7 @@ export default function Home() {
 
       <div 
         className={grid 
-          ? "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-4"
+          ? "grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-4"
           : "space-y-6 mx-4"
         }
       >
