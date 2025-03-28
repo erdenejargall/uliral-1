@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Mongol() {
+    const router = useRouter();
     const [data, setData] = useState();
-    const [grid, setGrid] = useState(false);
+    const [grid, setGrid] = useState(true);
     const [search, setSearch] = useState("");
 
-    const fallbackImage = "https://scontent.fuln6-1.fna.fbcdn.net/v/t39.30808-6/326498436_1574880736364874_3080204893058889679_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Rls32vHAqdUQ7kNvgEU5FTN&_nc_oc=AdgsGkCJwFCRWKOx2eub5I-vLm02WRPbg6iv6iYVF694Y3123LohUJMCfN60fbkKBQI&_nc_zt=23&_nc_ht=scontent.fuln6-1.fna&_nc_gid=ArEWqPRTjg2itF3ALXnQ9oN&oh=00_AYBadGH06YydKUxhMqMUnMI9LtsJ3EFAQ8NMLAlFUvJOkA&oe=67BEFCD8";
+    const fallbackImage = <img src="images/nest.jpg"/>;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,7 +19,7 @@ export default function Mongol() {
                 const response5 = await fetch("https://mongol-api-rest.vercel.app/EthnicGroups");
                 const response6 = await fetch("https://mongol-api-rest.vercel.app/Provinces");
                 const response7 = await fetch("https://mongol-api-rest.vercel.app/HistoricalFigures");
-
+    
                 const result1 = await response1.json();
                 const result2 = await response2.json();
                 const result3 = await response3.json();
@@ -25,7 +27,7 @@ export default function Mongol() {
                 const result5 = await response5.json();
                 const result6 = await response6.json();
                 const result7 = await response7.json();
-
+    
                 setData({
                     touristAttractions: result1.touristAttractions,
                     Instruments: result2.instruments,
@@ -33,15 +35,16 @@ export default function Mongol() {
                     HistoricalTools: result4.historicalTools,
                     EthnicGroups: result5.ethnicGroups,
                     Provinces: result6.provinces,
-                    HistoricalFigures: result7.historicalFigures
+                    HistoricalFigures: result7.historicalFigures,
                 });
             } catch (error) {
                 console.log(error);
             }
         };
-
+    
         fetchData();
     }, []);
+
     const filterData = (items, searchTerm) => {
         return items?.filter((item) =>
             item.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -65,14 +68,19 @@ export default function Mongol() {
                     Go to {grid ? "List" : "Grid"}
                 </button>
             </div>
+
             <p className="text-2xl font-bold mb-4">Tourist Attractions:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.touristAttractions, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
@@ -88,11 +96,15 @@ export default function Mongol() {
             <p className="text-2xl font-bold mt-8 mb-4">Instruments:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.Instruments, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
@@ -103,15 +115,18 @@ export default function Mongol() {
                     </div>
                 ))}
             </div>
-
             <p className="text-2xl font-bold mt-8 mb-4">Clothes:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.Clothes, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
@@ -124,14 +139,19 @@ export default function Mongol() {
                     </div>
                 ))}
             </div>
+
             <p className="text-2xl font-bold mt-8 mb-4">Historical Tools:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.HistoricalTools, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
@@ -149,11 +169,15 @@ export default function Mongol() {
             <p className="text-2xl font-bold mt-8 mb-4">Ethnic Groups:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.EthnicGroups, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
@@ -169,32 +193,39 @@ export default function Mongol() {
             <p className="text-2xl font-bold mt-8 mb-4">Provinces:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.Provinces, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
                         <p className="font-bold text-center mt-2">{item.name}</p>
                         <div className="p-2">
-                            <p className="text-sm"><strong>Area:</strong> {item.area} km²</p>
-                            <p className="text-sm"><strong>Population:</strong> {item.population}</p>
-                            <p className="text-sm"><strong>Capital:</strong> {item.capital}</p>
+                            <p className="text-sm"><p>Area:</p> {item.area} km²</p>
+                            <p className="text-sm"><p>Population:</p> {item.population}</p>
+                            <p className="text-sm"><p>Capital:</p> {item.capital}</p>
                         </div>
                     </div>
                 ))}
             </div>
-
             <p className="text-2xl font-bold mt-8 mb-4">Historical Figures:</p>
             <div className={grid ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" : "space-y-4"}>
                 {filterData(data?.HistoricalFigures, search)?.map((item) => (
-                    <div   className="border border-2 rounded-md drop-shadow-sm p-4">
+                    <div
+                        key={item.id}
+                        onClick={() => router.push(`/mongolapi/${item.id}`)}
+                        className="border border-2 rounded-md drop-shadow-sm p-4 cursor-pointer"
+                    >
                         <div className="flex justify-center">
                             <img
                                 className="rounded-xl w-full h-40 object-cover"
-                                src={item.images || fallbackImage}
+                                src={item.images || "images/nest.jpg"}
                                 alt={item.name}
                             />
                         </div>
