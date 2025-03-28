@@ -9,7 +9,7 @@ const buttonData = [
   { name: "Profile", file: "/profile" },
   { name: "Assignment", file: "/assignment" },
   { name: "Nest counter", file: "/counter" },
-  { name: "Weather app", file: "/weather" }
+  { name: "Weather app", file: "/weather.js" }
 ];
 
 export default function Home() {
