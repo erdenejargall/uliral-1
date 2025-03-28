@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 const buttonData = [
-  { name: "Listing", file: "/task", image: images/listing.png },
+  { name: "Listing", file: "/task" },
   { name: "Color", file: "/color" },
   { name: "CV", file: "/cv" },
   { name: "Search Task", file: "/task2" },
