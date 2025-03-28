@@ -8,6 +8,7 @@ const buttonData = [
   { name: "Search Task", file: "/task2" },
   { name: "Profile", file: "/profile" },
   { name: "Assignment", file: "/assignment" },
+  { name: "Nest counter", file: "/counter" }
 ];
 
 export default function Home() {
