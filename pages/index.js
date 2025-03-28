@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <h1 className="text-center font-extrabold text-3xl text-indigo-600 mt-20">
+      <h1 className="text-center font-extrabold text-3xl text-black mt-20">
         Home Page
       </h1>
       
