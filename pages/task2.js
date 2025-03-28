@@ -15,7 +15,7 @@ export default function User() {
 
   return (
     <div className="bg-white p-8">
-      <a href="http://localhost:3000/" className="w-36 border-2 border-bg-red-300 rounded-lg p-4 bg-blue-400"> 
+      <a href="https://erdenejargal.vercel.app/" className="w-36 border-2 border-bg-red-300 rounded-lg p-4 bg-blue-400"> 
         go back
       </a>
       <h1 className="text-2xl font-bold text-center text-black">Users</h1>
