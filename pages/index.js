@@ -137,7 +137,7 @@ export default function Portfolio() {
               </a>
               
               {!grid && (
-                <div className="flex-1 justify-center">
+                <div className="flex-1">
                   <h3 className="text-3xl font-semibold text-gray-800">{item.name}</h3>
                   <p className="text-gray-600 text-xl mt-3">{item.description}</p>
                 </div>
