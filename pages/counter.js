@@ -7,17 +7,21 @@ export default function Counter() {
         const interval = setInterval(() => {
             setTime((previous) => {
                 if (previous > 9) {
-
                     clearInterval(interval);
-
-                    return "'s up" ;
+                    return "'s up";
                 }
                 return previous + 1;
             });
         }, 500);
+        
+        return () => clearInterval(interval);
     }, []);
 
     return (
-        <p className="flex justify-center pt-10 font-bold text-xl">Time {time}</p>
+        <div className="fixed inset-0 flex items-center justify-center">
+            <p className={`text-5xl font-bold transition-all duration-300 ${time === "'s up" ? "text-green-500 scale-110 animate-pulse" : ""}`}>
+                Time {time}
+            </p>
+        </div>
     );
 }

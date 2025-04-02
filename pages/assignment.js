@@ -8,7 +8,7 @@ export default function Student() {
 
   return (
     <div className="bg-gray-600 min-h-screen p-8">
-      <a href="http://localhost:3000/" className="w-36 border-2 border-red-300 rounded-lg p-4 bg-blue-500 text-white text-center hover:bg-red-500 transition">
+      <a href="https://erdenejargal.vercel.app/" className="w-36 border-2 border-red-300 rounded-lg p-4 bg-blue-500 text-white text-center hover:bg-red-500 transition">
         Go Back
       </a>
       <div className="flex items-center justify-between m-6">
