@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Home() {
     const [counter, setCounter] = useState(0);
-    const [initialCount, setInititalCount] = useState(0);
+    const [initialCount, setInitialCount] = useState(0);
     
     const handleInitialCountChange = (event) => {
         setInitialCount(Number(event.target.value));
@@ -14,6 +14,10 @@ export default function Home() {
     
     return (
         <div className="pt-20 h-screen w-screen bg-gray-200">
+            <a href="https://erdenejargal.vercel.app/" className="absolute top-2 left-4 w-36 border-2 border-red-300 rounded-lg p-4 bg-blue-400"> 
+                go back
+            </a>
+            
             <div className="bg-blue-700 w-full h-16 flex items-center justify-center">
                 <p className="text-white text-xl flex justify-center">
                     Nest high school

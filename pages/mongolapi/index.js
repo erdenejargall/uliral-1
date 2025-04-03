@@ -53,7 +53,14 @@ export default function Mongol() {
 
     return (
         <div className="p-8">
+            <button 
+                    onClick={() => router.push("https://erdenejargal.vercel.app/")} 
+                    className="w-36 border-2 border-bg-red-300 rounded-lg p-4 bg-blue-400 mb-4 inline-block hover:bg-blue-500 transition"
+                >
+                    Go Back
+                </button>
             <div className="flex items-center justify-between mb-6">
+                
                 <input
                     type="text"
                     value={search}
@@ -67,6 +74,7 @@ export default function Mongol() {
                 >
                     Go to {grid ? "List" : "Grid"}
                 </button>
+                
             </div>
 
             <p className="text-2xl font-bold mb-4">Tourist Attractions:</p>
