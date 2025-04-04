@@ -100,7 +100,7 @@ export default function Portfolio() {
         <div className="space-y-5 text-xl text-gray-700 leading-relaxed">
           <p>I'm Erdenejargal Batragchaa, a high school student.</p>
           <p>Welcome to my little introduction about this semester's works.</p>
-          <p className="text-indigo-700 font-medium">With a foundation in Python, C++, and Scratch.</p>
+          <p className="space-y-5 text-xl text-gray-700 leading-relaxed">With a foundation in Python, C++, and Scratch.</p>
         </div>
       </div>
 
