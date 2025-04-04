@@ -152,7 +152,7 @@ export default function Portfolio() {
         <div className="text-xl text-gray-700 space-y-4">
           <p>Please feel free to reach out for inquiries or collaborations.</p>
           <p>Email: <span className="font-mono text-indigo-700">batragchaaerdenejargal@gmail.com</span></p>
-          <p>Phone: <span className="font-mono">+976 9595 5222</span></p>
+          <p>Phone: <span className="font-mono text-indigo-700">+976 9595 5222</span></p>
         </div>
       </div>
     </div>
