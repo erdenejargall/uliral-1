@@ -148,7 +148,7 @@ export default function Portfolio() {
       </div>
 
       <div id="contact" className="mt-14 p-10 bg-white rounded-lg shadow-sm max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Contacts</h2>
         <div className="text-xl text-gray-700 space-y-4">
           <p>Please feel free to reach out for inquiries or collaborations.</p>
           <p>Email: <span className="font-mono text-indigo-700">batragchaaerdenejargal@gmail.com</span></p>
