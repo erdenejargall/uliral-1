@@ -7,12 +7,12 @@ export default function Counter() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTime((previous) => {
-                if (previous > 9) {
+            setTime((count) => {
+                if (count > 9) {
                     clearInterval(interval);
                     return "'s up";
                 }
-                return previous + 1;
+                return count + 1;
             });
         }, 500);
         
@@ -21,9 +21,9 @@ export default function Counter() {
 
     return (
         <div className="p-8 m-6">
-            <a href="https://erdenejargal.vercel.app/" className="w-36 border-2 border-bg-red-300 rounded-lg p-4 bg-blue-400"> 
+            <button href="https://erdenejargal.vercel.app/" className="w-36 border-2 border-bg-red-300 rounded-lg p-4 bg-blue-400"> 
         go back
-      </a>
+      </button>
 
             <div className="fixed inset-0 flex items-center justify-center">
                 <p className={`text-5xl font-bold transition-all duration-300 ${time === "'s up" ? "text-green-500 scale-110 animate-pulse" : ""}`}>

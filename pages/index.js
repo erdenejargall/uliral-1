@@ -100,7 +100,7 @@ export default function Portfolio() {
         <div className="space-y-5 text-xl text-gray-700 leading-relaxed">
           <p>I'm Erdenejargal Batragchaa, a high school student.</p>
           <p>Welcome to my little introduction about this semester's works.</p>
-          <p className="text-indigo-700 font-medium">With a foundation in Python, C++, and Scratch.</p>
+          <p className="space-y-5 text-xl text-gray-700 leading-relaxed">With a foundation in Python, C++, and Scratch.</p>
         </div>
       </div>
 
@@ -148,11 +148,11 @@ export default function Portfolio() {
       </div>
 
       <div id="contact" className="mt-14 p-10 bg-white rounded-lg shadow-sm max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Contacts</h2>
         <div className="text-xl text-gray-700 space-y-4">
           <p>Please feel free to reach out for inquiries or collaborations.</p>
           <p>Email: <span className="font-mono text-indigo-700">batragchaaerdenejargal@gmail.com</span></p>
-          <p>Phone: <span className="font-mono">+976 9595 5222</span></p>
+          <p>Phone: <span className="font-mono text-indigo-700">+976 9595 5222</span></p>
         </div>
       </div>
     </div>
