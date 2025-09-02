@@ -33,3 +33,45 @@ export default function Counter() {
         </div>
     );
 }
+//second edition
+import { useState, useEffect, useRef } from "react";
+
+export default function Task() {
+  const [time, setTime] = useState(0);
+  const [delay, setDelay] = useState(1000);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    function tick() {
+      setTime((prevTime) => {
+        const newTime = prevTime + 1;
+
+        if (newTime > 0) {
+          setDelay((prevDelay) => prevDelay - 5);
+        }
+
+        return newTime;
+      });
+
+      timeoutRef.current = setTimeout(tick, delay);
+    }
+
+    timeoutRef.current = setTimeout(tick, delay);
+
+    return () => clearTimeout(timeoutRef.current);
+  }, [delay]);
+
+  return (
+    <div
+      className="h-screen w-screen p-8 m-0 flex justify-center items-center">
+        <div className="flex items-center justify-center">
+                <p className={`text-5xl font-bold`}>
+                    Time: {time}
+                </p>
+                <p className={`px-8 text-5xl font-bold`}>
+                    Delay: {delay}
+                </p>
+            </div>
+      </div>
+  );
+}
